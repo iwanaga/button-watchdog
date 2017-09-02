@@ -7,13 +7,13 @@ let board = new j5.Board({
 });
 
 board.on('ready', () => {
-    let led          = new    j5.Led('P1-3');
-    let redButton    = new j5.Button('P1-5');
-    let yellowButton = new j5.Button('P1-7');
-    let greenButton  = new j5.Button('P1-11');
-    let blueButton   = new j5.Button('P1-13');
-    let purpleButton = new j5.Button('P1-15');
-    let blackButton  = new j5.Button('P1-19');
+    let led          = new    j5.Led('P1-7');
+    let redButton    = new j5.Button('P1-11');
+    let yellowButton = new j5.Button('P1-13');
+    let greenButton  = new j5.Button('P1-15');
+    let blueButton   = new j5.Button('P1-19');
+    let purpleButton = new j5.Button('P1-21');
+    let blackButton  = new j5.Button('P1-23');
 
     redButton.on('down', () => {
         console.log('RED  pushed');
