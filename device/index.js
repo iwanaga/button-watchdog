@@ -12,7 +12,7 @@ board.on('ready', () => {
     let yellowButton = new j5.Button('P1-7');
     let greenButton  = new j5.Button('P1-11');
     let blueButton   = new j5.Button('P1-13');
-    let purlpeButton = new j5.Button('P1-15');
+    let purpleButton = new j5.Button('P1-15');
     let blackButton  = new j5.Button('P1-19');
 
     redButton.on('down', () => {
@@ -23,7 +23,22 @@ board.on('ready', () => {
         console.log('YELLOW pushed');
         feedBackByLed(led);
     });
-
+    greenButton.on('down', () => {
+        console.log('GREEN pushed');
+        feedBackByLed(led);
+    });
+    blueButton.on('down', () => {
+        console.log('BLUE pushed');
+        feedBackByLed(led);
+    });
+    purpleButton.on('down', () => {
+        console.log('PURPLE pushed');
+        feedBackByLed(led);
+    });
+    blackButton.on('down', () => {
+        console.log('BLACK pushed');
+        feedBackByLed(led);
+    });
 });
 
 function feedBackByLed(led) {
