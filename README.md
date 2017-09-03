@@ -24,5 +24,6 @@ gulp build:dist
 
 ## 起動
 ```bash
-
+gulp serve:dist
+node dist/server
 ```
