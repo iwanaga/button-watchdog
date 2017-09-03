@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">ボタンプッシュ回数:</h1>
+      <table>
+        <thead>
+        <tr><th>color</th><th>counts</th></tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="(color, count) in $ctrl.buttonCounts">
+          <td class="padding">{{color}}</td><td>{{count | number}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-12">
+      <h1 class="page-header">ボタンプッシュ履歴:</h1>
+      <table>
+        <thead><th>color</th><th>timestamp</th></thead>
+      <tbody ng-repeat="button in $ctrl.buttonHistory">
+      <tr><td class="padding">{{button.color}}</td><td>{{button.createdAt | date: 'yyyy-MM-dd HH:mm:ss'}}</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
