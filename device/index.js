@@ -10,9 +10,9 @@ let board = new j5.Board({
 });
 mongoose.Promise = Promise;
 
-mongoose.connect('mongodb://localhost/button_watchdog', { useMongoClient: true, keepAlive: true }).then(
-    () => {
-        board.on('ready', () => {
+board.on('ready', () => {
+    mongoose.connect('mongodb://localhost/button_watchdog', { useMongoClient: true, keepAlive: true }).then(
+        () => {
             let led          = new    j5.Led('P1-7');
             let redButton    = new j5.Button('P1-11');
             let yellowButton = new j5.Button('P1-13');
@@ -51,10 +51,10 @@ mongoose.connect('mongodb://localhost/button_watchdog', { useMongoClient: true, 
                 feedBackByLed(led);
                 saveButton('black');
             });
-        });
-    },
-    err => { console.log(err); }
-);
+        },
+        err => { console.log(err); }
+    )
+});
 
 function saveButton(color) {
     Button.create({color: color}, (err, doc) => {
