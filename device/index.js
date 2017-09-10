@@ -22,32 +22,32 @@ board.on('ready', () => {
             let blackButton  = new j5.Button('P1-23');
 
             redButton.on('down', () => {
-                console.log('RED  pushed');
+                console.log(`${timestamp()} RED pushed`);
                 feedBackByLed(led);
                 saveButton('red');
             });
             yellowButton.on('down', () => {
-                console.log('YELLOW pushed');
+                console.log(`${timestamp()} YELLOW pushed`);
                 feedBackByLed(led);
                 saveButton('yellow');
             });
             greenButton.on('down', () => {
-                console.log('GREEN pushed');
+                console.log(`${timestamp()} GREEN pushed`);
                 feedBackByLed(led);
                 saveButton('green');
             });
             blueButton.on('down', () => {
-                console.log('BLUE pushed');
+                console.log(`${timestamp()} BLUE pushed`);
                 feedBackByLed(led);
                 saveButton('blue');
             });
             purpleButton.on('down', () => {
-                console.log('PURPLE pushed');
+                console.log(`${timestamp()} PURPLE pushed`);
                 feedBackByLed(led);
                 saveButton('purple');
             });
             blackButton.on('down', () => {
-                console.log('BLACK pushed');
+                console.log(`${timestamp()} BLACK pushed`);
                 feedBackByLed(led);
                 saveButton('black');
             });
@@ -68,4 +68,8 @@ function feedBackByLed(led) {
         led.stop();
         led.off();
     }, 1000);
+}
+
+function timestamp() {
+    return (new Date()).toISOString();
 }
