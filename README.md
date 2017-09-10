@@ -14,6 +14,7 @@ npm install -g forever
 sudo cp button-watchdog /etc/init.d/
 sudo chmod a+x /etc/init.d/button-watchdog
 sudo update-rc.d button-watchdog defaults
+sudo chkconfig --add button-watchdog
 ```
 
 ## デバイス側プロセス起動
