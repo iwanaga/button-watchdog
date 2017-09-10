@@ -11,6 +11,14 @@ https://docs.mongodb.com/manual/installation/ を参照
 ## daemon化ツール
 ```bash
 npm install -g forever
+sudo cp button-watchdog /etc/init.d/
+sudo chmod a+x /etc/init.d/button-watchdog
+sudo update-rc.d button-watchdog defaults
+```
+
+## デバイス側プロセス起動
+```bash
+sudo service button-watchdog start
 ```
 
 ## 開発環境のみ
