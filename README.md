@@ -8,6 +8,11 @@ https://github.com/creationix/nvm を参照
 ## MongoDB インストール
 https://docs.mongodb.com/manual/installation/ を参照
 
+## daemon化ツール
+```bash
+npm install -g forever
+```
+
 ## 開発環境のみ
 ```bash
 npm install -g yo gulp-cli generator-angular-fullstack
