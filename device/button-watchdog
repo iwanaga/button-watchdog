@@ -1,0 +1,23 @@
+#!/bin/sh
+#/etc/init.d/button-watchdog
+
+export NVM_DIR="/home/pi/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+export NODE_PATH=$NODE_PATH:/home/pi/.nvm/versions/node/v6.11.2/bin/node
+DAEMON=/home/pi/.nvm/versions/node/v6.11.2/bin/forever
+APP_DIR=/home/pi/dev/button-watchdog/device
+
+case "$1" in
+start)
+exec $DAEMON start --sourceDir=$APP_DIR index.js
+;;
+stop)
+exec $DAEMON stop  --sourceDir=$APP_DIR index.js
+;;
+*)
+echo "Usage: /etc/init.d/button-watchdog {start|stop}"
+exit 1
+;;
+esac
+exit 0
